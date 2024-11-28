@@ -42,6 +42,30 @@ const Navbar = () => {
     },
   };
 
+  const listvariants = {
+    closed: {
+      x: "100vw",
+    },
+    opened: {
+      x: 0,
+      transition:{
+        when: 'beforeChildren',
+        staggerChildren: 0.2
+      }
+    },
+  };
+
+  const listItemvariants = {
+    closed:{
+      x: -10,
+      opacity: 0
+    },
+    opened:{
+      x: 0,
+      opacity: 1
+    }
+  }
+
   return (
     <div className="h-full flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       <div className="hidden md:flex gap-4">
@@ -50,39 +74,46 @@ const Navbar = () => {
         ))}
       </div>
       {/* response menu */}
-      <div className="md:hidden">
+      <div className="md:hidden ">
         <button
           className="flex-col flex justify-between w-10 h-8 z-50 relative"
           onClick={() => setOpen(!open)}
         >
           <motion.div
             variants={topVarients}
-            animate={open? 'opened' : 'closed'}
-            className="w-10 h-1 bg-black rounded-full"
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded-full origin-left"
           ></motion.div>
           <motion.div
             variants={centerVarients}
-            animate={open? 'opened' : 'closed'}
+            animate={open ? "opened" : "closed"}
             className="w-10 h-1 bg-black rounded-full"
           ></motion.div>
           <motion.div
             variants={bottomVarients}
-            animate={open? 'opened' : 'closed'}
-            className="w-10 h-1 bg-black rounded-full"
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded-full origin-left"
           ></motion.div>
         </button>
         {open && (
-          <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex items-center flex-col  justify-center gap-8 text-4xl">
+          <motion.div
+            variants={listvariants}
+            initial= 'closed'
+            animate = 'opened'
+            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex items-center flex-col  justify-center gap-8 text-4xl z-40"
+          >
             {links.map((link) => (
-              <Link href={link.url} key={link.title}>
+              <motion.div key={link.title} variants={listItemvariants}>
+              <Link href={link.url}>
                 {link.title}
               </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
       {/* logo */}
-      <div className="ltr md:hidden lg:flex justify-center">
+      <div className="ltr md:hidden lg:flex xl:justify-center">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
