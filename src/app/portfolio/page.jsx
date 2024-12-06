@@ -1,89 +1,220 @@
+// "use client";
+
+// import {
+//   motion,
+//   useResetProjection,
+//   useScroll,
+//   useTransform,
+// } from "framer-motion";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useRef } from "react";
+
+// const items = [
+//   {
+//     id: 1,
+//     color: "from-blue-100 to-blue-200",
+//     title: " پروژه مدریت سیستم آموزشی باNextJs",
+//     desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد برای مدیریت و آموزش طراحی شده است. این سایت دارای داشبوردهای مجزا برای مدیران و معلمان است که به هر گروه امکان میدهد به طور مستقل و موثر وظایف خود را مدیریت کنند. با استفاده از تقویم داخلی، کاربران میتوانند رویدادها و جلسات را به راحتی ثبت و پیگیری کنند. همچنین، نمودارهای پیشرفتهای در سایت تعبیه شده است که به تحلیل و بررسی دادهها کمک میکند و اطلاعات مفیدی را برای بهبود فرآیندهای آموزشی فراهم میآورد. این ویژگیها در کنار طراحی کاربرپسند و واکنشگرا، تجربهای بینظیر را برای کاربران فراهم میکند.",
+//     img: "/school.png",
+//     link: "https://lama.dev",
+//   },
+//   {
+//     id: 2,
+//     color: "from-blue-200 to-violet-200",
+//     title: "پروژه سایت معرفی با ReactJS",
+//     desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است تا تجربهای سریع و روان برای کاربران فراهم کند. این سایت به گونهای طراحی شده که نمونه کارها و پروژههای شما را به بهترین شکل ممکن نمایش دهد. با استفاده از طراحی مدرن و واکنشگرا، سایت ما به خوبی در دستگاههای مختلف نمایش داده میشود و به کاربران امکان میدهد به راحتی با محتوای شما ارتباط برقرار کنند. هدف ما ایجاد یک پلتفرم حرفهای و جذاب است که تواناییها و دستاوردهای شما را به نمایش بگذارد و به شما کمک کند تا در دنیای دیجیتال برجسته شوید.",
+//     img: "/portfolio.png",
+//     link: "https://lama.dev",
+//   },
+//   {
+//     id: 3,
+//     color: "from-violet-200 to-purple-200",
+//     title: "پنل کاربری سایت فروشگاهی",
+//     desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است و دارای امکاناتی جامع برای مدیریت محصولات، سفارشات و تحلیل دادهها میباشد. این سایت با طراحی واکنشگرا، تجربهای بینظیر را در تمامی دستگاهها از جمله موبایل، تبلت و دسکتاپ فراهم میکند. پنل مدیریت سایت به مدیران امکان میدهد تا به راحتی محصولات را اضافه، ویرایش و حذف کنند، سفارشات را پیگیری کنند و با استفاده از ابزارهای تحلیل داده، عملکرد فروشگاه را بهبود بخشند. هدف ما ایجاد یک پلتفرم مدیریت آنلاین کاربرپسند و کارآمد است که نیازهای مدیران را به بهترین شکل ممکن برآورده کند.",
+//     img: "/reactPanel.png",
+//     link: "https://lama.dev",
+//   },
+//   {
+//     id: 4,
+//     color: "from-purple-200 to-blue-100",
+//     title: "سایت فروشگاهی",
+//     desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است تا تجربهای سریع و کارآمد برای کاربران فراهم کند. این سایت با طراحی واکنشگرا، به خوبی در دستگاههای مختلف از جمله موبایل، تبلت و دسکتاپ نمایش داده میشود. هدف ما ایجاد یک پلتفرم خرید آنلاین است که به کاربران امکان میدهد به راحتی محصولات مورد نظر خود را جستجو، مشاهده و خریداری کنند. با استفاده از تکنولوژیهای پیشرفته و رابط کاربری کاربرپسند، سایت ما تجربه خریدی لذتبخش و بدون مشکل را برای مشتریان فراهم میکند.",
+//     img: "/reactSite.png",
+//     link: "https://lama.dev",
+//   },
+// ];
+
+// const Portfolio = () => {
+//   const ref = useRef();
+//   const { scrollYProgress } = useScroll({ target: ref });
+//   const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+//   return (<div>
+//     <motion.div
+//       className="h-full "
+//       initial={{ y: "-200vh" }}
+//       animate={{ y: "0%" }}
+//       transition={{ duration: 1.5 }}
+//     >
+
+//         <div className="h-[400vh] relative" ref={ref}>
+//           <div className="sticky w-screen flex h-[100vh] top-0 gap-4 items-center overflow-hidden">
+//             <motion.div style={{ x }} className="flex">
+//               {items.map((item) => (
+//                 <div
+//                   className={`h-[100vh] w-screen flex items-center justify-center bg-gradient-to-l ${item.color}`}
+//                   key={item.id}
+//                 >
+//                   <div className="p-20 w-[70%] flex flex-col gap-8 text-gray-600 ">
+//                     <h1 className="font-bold text-2xl">{item.title}</h1>
+//                     <div className="">
+//                       <Image src={item.img} alt="" width={400} height={350} />
+//                     </div>
+//                     <p>{item.desc}</p>
+//                     <Link href={item.link} className="w-full flex justify-end items-center" >
+//                     <button className="bg-white rounded shadow-2xl hover:shadow-none p-3">مشاهده دمو</button>
+//                     </Link>
+//                   </div>
+//                 </div>
+//               ))}
+//             </motion.div>
+//             {/* <div></div> */}
+//           </div>
+//         </div>
+
+//     </motion.div></div>
+//   );
+// };
+
+// export default Portfolio;
+
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import {
   motion,
   useResetProjection,
   useScroll,
   useTransform,
 } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useRef } from "react";
+import React, { useState } from "react";
 
-const items = [
-  {
-    id: 1,
-    color: "from-blue-100 to-blue-200",
-    title: " پروژه مدریت سیستم آموزشی باNextJs",
-    desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد برای مدیریت و آموزش طراحی شده است. این سایت دارای داشبوردهای مجزا برای مدیران و معلمان است که به هر گروه امکان میدهد به طور مستقل و موثر وظایف خود را مدیریت کنند. با استفاده از تقویم داخلی، کاربران میتوانند رویدادها و جلسات را به راحتی ثبت و پیگیری کنند. همچنین، نمودارهای پیشرفتهای در سایت تعبیه شده است که به تحلیل و بررسی دادهها کمک میکند و اطلاعات مفیدی را برای بهبود فرآیندهای آموزشی فراهم میآورد. این ویژگیها در کنار طراحی کاربرپسند و واکنشگرا، تجربهای بینظیر را برای کاربران فراهم میکند.",
-    img: "/school.png",
-    link: "https://lama.dev",
-  },
-  {
-    id: 2,
-    color: "from-blue-200 to-violet-200",
-    title: "پروژه سایت معرفی با ReactJS",
-    desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است تا تجربهای سریع و روان برای کاربران فراهم کند. این سایت به گونهای طراحی شده که نمونه کارها و پروژههای شما را به بهترین شکل ممکن نمایش دهد. با استفاده از طراحی مدرن و واکنشگرا، سایت ما به خوبی در دستگاههای مختلف نمایش داده میشود و به کاربران امکان میدهد به راحتی با محتوای شما ارتباط برقرار کنند. هدف ما ایجاد یک پلتفرم حرفهای و جذاب است که تواناییها و دستاوردهای شما را به نمایش بگذارد و به شما کمک کند تا در دنیای دیجیتال برجسته شوید.",
-    img: "/portfolio.png",
-    link: "https://lama.dev",
-  },
-  {
-    id: 3,
-    color: "from-violet-200 to-purple-200",
-    title: "پنل کاربری سایت فروشگاهی",
-    desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است و دارای امکاناتی جامع برای مدیریت محصولات، سفارشات و تحلیل دادهها میباشد. این سایت با طراحی واکنشگرا، تجربهای بینظیر را در تمامی دستگاهها از جمله موبایل، تبلت و دسکتاپ فراهم میکند. پنل مدیریت سایت به مدیران امکان میدهد تا به راحتی محصولات را اضافه، ویرایش و حذف کنند، سفارشات را پیگیری کنند و با استفاده از ابزارهای تحلیل داده، عملکرد فروشگاه را بهبود بخشند. هدف ما ایجاد یک پلتفرم مدیریت آنلاین کاربرپسند و کارآمد است که نیازهای مدیران را به بهترین شکل ممکن برآورده کند.",
-    img: "/reactPanel.png",
-    link: "https://lama.dev",
-  },
-  {
-    id: 4,
-    color: "from-purple-200 to-blue-100",
-    title: "سایت فروشگاهی",
-    desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است تا تجربهای سریع و کارآمد برای کاربران فراهم کند. این سایت با طراحی واکنشگرا، به خوبی در دستگاههای مختلف از جمله موبایل، تبلت و دسکتاپ نمایش داده میشود. هدف ما ایجاد یک پلتفرم خرید آنلاین است که به کاربران امکان میدهد به راحتی محصولات مورد نظر خود را جستجو، مشاهده و خریداری کنند. با استفاده از تکنولوژیهای پیشرفته و رابط کاربری کاربرپسند، سایت ما تجربه خریدی لذتبخش و بدون مشکل را برای مشتریان فراهم میکند.",
-    img: "/reactSite.png",
-    link: "https://lama.dev",
-  },
-];
+function Portfolio() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const Portfolio = () => {
-  const ref = useRef();
-  const { scrollYProgress } = useScroll({ target: ref });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  return (<div>
+  const data = [
+    {
+      id: 1,
+      color: "from-blue-100 to-blue-200",
+      title: " پروژه مدریت سیستم آموزشی باNextJs",
+      desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد برای مدیریت و آموزش طراحی شده است. این سایت دارای داشبوردهای مجزا برای مدیران و معلمان است که به هر گروه امکان میدهد به طور مستقل و موثر وظایف خود را مدیریت کنند. با استفاده از تقویم داخلی، کاربران میتوانند رویدادها و جلسات را به راحتی ثبت و پیگیری کنند. همچنین، نمودارهای پیشرفتهای در سایت تعبیه شده است که به تحلیل و بررسی دادهها کمک میکند و اطلاعات مفیدی را برای بهبود فرآیندهای آموزشی فراهم میآورد. این ویژگیها در کنار طراحی کاربرپسند و واکنشگرا، تجربهای بینظیر را برای کاربران فراهم میکند.",
+      img: "/school.png",
+      link: "https://lama.dev",
+    },
+    {
+      id: 2,
+      color: "from-blue-200 to-violet-200",
+      title: "پروژه سایت معرفی با ReactJS",
+      desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است تا تجربهای سریع و روان برای کاربران فراهم کند. این سایت به گونهای طراحی شده که نمونه کارها و پروژههای شما را به بهترین شکل ممکن نمایش دهد. با استفاده از طراحی مدرن و واکنشگرا، سایت ما به خوبی در دستگاههای مختلف نمایش داده میشود و به کاربران امکان میدهد به راحتی با محتوای شما ارتباط برقرار کنند. هدف ما ایجاد یک پلتفرم حرفهای و جذاب است که تواناییها و دستاوردهای شما را به نمایش بگذارد و به شما کمک کند تا در دنیای دیجیتال برجسته شوید.",
+      img: "/portfolio.png",
+      link: "https://lama.dev",
+    },
+    {
+      id: 3,
+      color: "from-violet-200 to-purple-200",
+      title: "پنل کاربری سایت فروشگاهی",
+      desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است و دارای امکاناتی جامع برای مدیریت محصولات، سفارشات و تحلیل دادهها میباشد. این سایت با طراحی واکنشگرا، تجربهای بینظیر را در تمامی دستگاهها از جمله موبایل، تبلت و دسکتاپ فراهم میکند. پنل مدیریت سایت به مدیران امکان میدهد تا به راحتی محصولات را اضافه، ویرایش و حذف کنند، سفارشات را پیگیری کنند و با استفاده از ابزارهای تحلیل داده، عملکرد فروشگاه را بهبود بخشند. هدف ما ایجاد یک پلتفرم مدیریت آنلاین کاربرپسند و کارآمد است که نیازهای مدیران را به بهترین شکل ممکن برآورده کند.",
+      img: "/reactPanel.png",
+      link: "https://lama.dev",
+    },
+    {
+      id: 4,
+      color: "from-purple-200 to-blue-100",
+      title: "سایت فروشگاهی",
+      desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است تا تجربهای سریع و کارآمد برای کاربران فراهم کند. این سایت با طراحی واکنشگرا، به خوبی در دستگاههای مختلف از جمله موبایل، تبلت و دسکتاپ نمایش داده میشود. هدف ما ایجاد یک پلتفرم خرید آنلاین است که به کاربران امکان میدهد به راحتی محصولات مورد نظر خود را جستجو، مشاهده و خریداری کنند. با استفاده از تکنولوژیهای پیشرفته و رابط کاربری کاربرپسند، سایت ما تجربه خریدی لذتبخش و بدون مشکل را برای مشتریان فراهم میکند.",
+      img: "/reactSite.png",
+      link: "https://lama.dev",
+    },
+  ];
+
+  const handleClick = (way) => {
+    way === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+  };
+
+  return (
     <motion.div
-      className="h-full "
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%" }}
-      transition={{ duration: 1.5 }}
+          className="h-full "
+          initial={{ y: "-200vh" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 1.5 }}
+        >
+    <div
+      className="  h-full flex items-center justify-center relative overflow-hidden"
+      id="Portfolio"
     >
-      
-        <div className="h-[400vh] relative" ref={ref}>
-          <div className="sticky w-screen flex h-[100vh] top-0 gap-4 items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex">
-              {items.map((item) => (
-                <div
-                  className={`h-[100vh] w-screen flex items-center justify-center bg-gradient-to-l ${item.color}`}
-                  key={item.id}
-                >
-                  <div className="p-20 w-[70%] flex flex-col gap-8 text-gray-600 ">
-                    <h1 className="font-bold text-2xl">{item.title}</h1>
-                    <div className="">
-                      <Image src={item.img} alt="" width={400} height={350} />
-                    </div>
-                    <p>{item.desc}</p>
-                    <Link href={item.link} className="w-full flex justify-end items-center" >
-                    <button className="bg-white rounded shadow-2xl hover:shadow-none p-3">مشاهده دمو</button>
-                    </Link>
-                  </div>
+      <div
+        className="h-full text-black flex absolute left-0 tran max-[640px]:h-[100vh] max-[640px]:flex-col max-[640px]:justify-center"
+        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+      >
+        {data.map((item, index) => (
+          <React.Fragment key={index}>
+            <div className="w-[100vw] h-full flex items-center justify-center">
+              <div className={` w-full h-[100%] rounded-2xl flex items-center justify-center max-[640px]:w-[90%] max-[640px]:h-[180px] max-[640px]:my-1`}>
+                {/* <div className=" h-[80%] justify-center items-center flex flex1 max-[640px]:h-[100%]">
+              <div className="w-[90%] h-[90%] flex flex-col justify-around ">
+                <div className="w-[50px] h-[50px] rounded-full bg-pink-800 flex items-center justify-center max-[640px]:w-8 max-[640px]:h-8">
+                  <Image className="w-6 max-[640px]:w-2" src='/arrow.png' alt="" width={12} height={12}/>
                 </div>
-              ))}
-            </motion.div>
-            {/* <div></div> */}
-          </div>
-        </div>
-      
-    </motion.div></div>
+                <h2 className="text-[30px] max-[640px]:text-[12px] m-2">{item.title}</h2>
+                <p className="text-[16px] m-2 overflow-hidden max-[640px]:text-[8px]">{item.desc}</p>
+                
+              </div>
+            </div>
+            <div className="flex1 h-[100%] flex items-center justify-center overflow-hidden">
+                <img className="w-[400px] -rotate-12" src={item.img} alt="" />
+            </div> */}
+                <div className="p-20 w-[70%] flex flex-col gap-8 text-black ">
+                  <h1 className="font-bold text-2xl">{item.title}</h1>
+                  <div className="">
+                    <Image src={item.img} alt="" width={400} height={350} />
+                  </div>
+                  <p className=" ">{item.desc}</p>
+                  <Link
+                    href={item.link}
+                    className="w-full flex justify-end items-center"
+                  >
+                    <button className="bg-white rounded portBoxShadow hover:shadow-none p-3">
+                      مشاهده دمو
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
+      <Image
+        onClick={() => handleClick("left")}
+        className="absolute h-[50px] text-black w-11 left-32 rotate-180 cursor-pointer"
+        src="/arrow.png"
+        alt=""
+        width={12}
+        height={12}
+      />
+      <Image
+        onClick={() => handleClick("right")}
+        className="absolute h-[50px] !text-black w-11 right-32 cursor-pointer"
+        src="/arrow.png"
+        alt=""
+        width={12}
+        height={12}
+      />
+    </div>
+    </motion.div>
   );
-};
+}
 
 export default Portfolio;
