@@ -24,18 +24,20 @@ const About = () => {
           <Brain scrollYProgress={scrollYProgress} />
         </div>
         {/* textcontainer */}
-        <div className=" lg:w-2/3 xl:1/2 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 flex-col ">
+        <div className=" lg:w-2/3 xl:1/2 px-4 sm:px-8 md:px-12 lg:px-20  flex-col ">
           {/* biography container */}
           <div className="flex flex-col h-[calc(100vh-6rem)] justify-center gap-12">
             <h1 className="font-bold text-2xl">درباره من</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              dolores, ipsa atque rerum neque quam sequi cumque earum, tempora
-              fugiat velit voluptatum impedit vero? Minima et nulla
-              exercitationem perspiciatis labore.
+             من توی دنیای برنامه‌نویسی وب فعالیت می‌کنم. بیشتر چیزی که بلدم رو خودم یاد گرفتم و با تجربه‌هایی که توی پروژه‌های مختلف به دست آوردم، به جایی رسیدم که الان هستم.
+
+برای من برنامه‌نویسی وب فقط یه شغل نیست، یه جور هنر هست که بهم این فرصت رو می‌ده که سایت‌ها و اپلیکیشن‌هایی بسازم که کاربرها از استفاده ازشون لذت ببرند. من همیشه سعی می‌کنم به نیازهای کاربران و ایده‌های مختلف پاسخ بدم.
+
+در کارم توی  Next Js، React Js، JavaScript و فریم‌ورک‌های مختلف که در بخش پایین ذکر کردم تخصص دارم و از این تکنولوژی‌ها برای طراحی و ساخت سایت‌ها و اپلیکیشن‌هایی استفاده می‌کنم که هم از نظر فنی و هم از نظر تجربه کاربری خیلی خوب عمل کنند
+.
             </p>
-            <span className="italic">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            <span className="font-bold text-purple-900">
+            اگر به دنبال یک توسعه‌دهنده وب با دیدگاه خلاقانه و حل مسئله هستید، خوشحال می‌شوم که با شما همکاری کنم
             </span>
             {/* svg signitiur */}
             {/* <div className=""></div> */}

@@ -139,7 +139,7 @@ function Portfolio() {
   ];
 
   const handleClick = (way) => {
-    way === "left"
+    way === "right"
       ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
@@ -150,10 +150,11 @@ function Portfolio() {
           initial={{ y: "-200vh" }}
           animate={{ y: "0%" }}
           transition={{ duration: 1.5 }}
+          id="portfolio"
         >
     <div
       className="  h-full flex items-center justify-center relative overflow-hidden"
-      id="Portfolio"
+      
     >
       <div
         className="h-full text-black flex absolute left-0 tran max-[640px]:h-[100vh] max-[640px]:flex-col max-[640px]:justify-center"
@@ -163,23 +164,10 @@ function Portfolio() {
           <React.Fragment key={index}>
             <div className="w-[100vw] h-full flex items-center justify-center">
               <div className={` w-full h-[100%] rounded-2xl flex items-center justify-center max-[640px]:w-[90%] max-[640px]:h-[180px] max-[640px]:my-1`}>
-                {/* <div className=" h-[80%] justify-center items-center flex flex1 max-[640px]:h-[100%]">
-              <div className="w-[90%] h-[90%] flex flex-col justify-around ">
-                <div className="w-[50px] h-[50px] rounded-full bg-pink-800 flex items-center justify-center max-[640px]:w-8 max-[640px]:h-8">
-                  <Image className="w-6 max-[640px]:w-2" src='/arrow.png' alt="" width={12} height={12}/>
-                </div>
-                <h2 className="text-[30px] max-[640px]:text-[12px] m-2">{item.title}</h2>
-                <p className="text-[16px] m-2 overflow-hidden max-[640px]:text-[8px]">{item.desc}</p>
-                
-              </div>
-            </div>
-            <div className="flex1 h-[100%] flex items-center justify-center overflow-hidden">
-                <img className="w-[400px] -rotate-12" src={item.img} alt="" />
-            </div> */}
                 <div className="p-20 w-[70%] flex flex-col gap-8 text-black ">
                   <h1 className="font-bold text-2xl">{item.title}</h1>
                   <div className="">
-                    <Image src={item.img} alt="" width={400} height={350} />
+                    <Image src={item.img} className="rounded-xl portBoxShadow" alt="" width={400} height={350} />
                   </div>
                   <p className=" ">{item.desc}</p>
                   <Link
