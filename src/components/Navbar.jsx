@@ -67,7 +67,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="h-full  sticky overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+    <div className="h-full bg-teal-400/20 sticky overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       <div className="hidden md:flex gap-4">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
@@ -116,10 +116,10 @@ const Navbar = () => {
       <div className="ltr md:hidden lg:flex xl:justify-center">
         <Link
           href="/"
-          className="text-sm bg-purple-900 rounded-md p-1 font-semibold flex items-center justify-center"
+          className="text-sm bg-gray-700 rounded-md p-1 font-semibold flex items-center justify-center"
         >
           <span className="text-white p-1">SaeidehTajmehr</span>
-          <span className="w-10 h-8 rounded bg-white text-purple-700  flex items-center justify-center">
+          <span className="w-10 h-8 rounded bg-white text-gray-700  flex items-center justify-center">
             . me
           </span>
         </Link>

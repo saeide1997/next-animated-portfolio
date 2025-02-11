@@ -13,10 +13,10 @@ const Contact = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1.5 }}
     >
-      <div className="h-full flex flex-col justify-center items-center lg:flex-row gap-4 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-36">
+      <div className="h-full flex flex-col justify-center items-center lg:flex-row ">
         {/* text Content */}
 
-        <div className="flex justify-center items-center p-4 h-1/6 lg:h-full lg:w-1/2 text-2xl lg:text-4xl">
+        <div className="flex  justify-center w-full bg-gradient-to-b from-teal-400/20 to-blue-500 items-center h-1/2 lg:h-full lg:w-1/2 text-2xl lg:text-4xl">
           <motion.div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -33,10 +33,10 @@ const Contact = () => {
         </div>
 
         {/* form container */}
-        <form className="lg:bg-purple-100 h-5/6 p-2 lg:h-[90%] lg:w-1/2 flex flex-col justify-center items-center">
-            <textarea className=" my-3 lg:my-9 border-b-2 border-solid border-gray-700 w-72" placeholder="متن شما..." name="" id="" cols="30" rows="6" style={{background:'none'}}></textarea>
-            <input  className=" my-3 lg:my-9 border-b-2 border-solid border-gray-700 w-72" style={{background:'none'}} type="text" placeholder=" ایمیل شما ..." name="" id="" />
-            <button className="bg-gray-300 text-black px-4 py-2 mt-6 lg:mt-18 w-64" type="submit">ارسال نامه</button>
+        <form className=" p-2 h-1/2 lg:h-[90%] w-full lg:w-1/2 flex flex-col justify-center items-center">
+            <textarea className=" my-1 p-4  bg-gray-100 lg:mt-9 border-b-2 border-solid border-gray-700 w-[90%]" placeholder="متن شما..." name="" id=""rows="6" ></textarea>
+            <input  className=" my-1 p-4 bg-gray-100 lg:mb-9 border-b-2 border-solid border-gray-700 w-[90%]" type="text" placeholder=" ایمیل شما ..."  name="" id="" />
+            <button className="portBoxShadow hover:shadow-md bg-blue-300 text-black px-4 py-2 mt-6 lg:mt-18 w-64" type="submit">ارسال نامه</button>
         </form>
       </div>
     </motion.div>
