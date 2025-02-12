@@ -27,7 +27,7 @@ const About = () => {
         <div className=" lg:w-2/3 xl:1/2 px-4 sm:px-8 md:px-12 lg:px-20  flex-col ">
           {/* biography container */}
           <div className="flex flex-col h-[calc(100vh-6rem)] justify-center gap-12">
-            <h1 className="font-bold text-2xl">درباره من</h1>
+            <h1 className="font-bold text-teal-800 text-3xl">درباره من</h1>
             <p className="text-lg">
              من توی دنیای برنامه‌نویسی وب فعالیت می‌کنم. بیشتر چیزی که بلدم رو خودم یاد گرفتم و با تجربه‌هایی که توی پروژه‌های مختلف به دست آوردم، به جایی رسیدم که الان هستم.
 
@@ -36,8 +36,8 @@ const About = () => {
 در کارم توی  Next Js، React Js، JavaScript و فریم‌ورک‌های مختلف که در بخش پایین ذکر کردم تخصص دارم و از این تکنولوژی‌ها برای طراحی و ساخت سایت‌ها و اپلیکیشن‌هایی استفاده می‌کنم که هم از نظر فنی و هم از نظر تجربه کاربری خیلی خوب عمل کنند
 .
             </p>
-            <span className="font-bold text-purple-900">
-            اگر به دنبال یک توسعه‌دهنده وب با دیدگاه خلاقانه و حل مسئله هستید، خوشحال می‌شوم که با شما همکاری کنم
+            <span className="font-bold text-2xl text-teal-800">
+            اگر به دنبال یک توسعه‌دهنده وب با دیدگاه خلاقانه و حل مسئله هستید، خوشحال می‌شوم که با شما همکاری کنم.
             </span>
             {/* svg signitiur */}
             {/* <div className=""></div> */}
@@ -77,7 +77,7 @@ const About = () => {
               initial={{ x: "-700px" }}
               animate={isSkillRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="font-bold text-2xl"
+              className="font-bold text-teal-800 text-3xl"
             >
               مهارت‌ها
             </motion.h1>
