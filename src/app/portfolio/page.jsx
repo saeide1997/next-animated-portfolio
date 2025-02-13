@@ -20,7 +20,7 @@ function Portfolio() {
       title: " پروژه مدریت سیستم آموزشی باNextJs",
       desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد برای مدیریت و آموزش طراحی شده است. این سایت دارای داشبوردهای مجزا برای مدیران و معلمان است که به هر گروه امکان میدهد به طور مستقل و موثر وظایف خود را مدیریت کنند. با استفاده از تقویم داخلی، کاربران میتوانند رویدادها و جلسات را به راحتی ثبت و پیگیری کنند. همچنین، نمودارهای پیشرفتهای در سایت تعبیه شده است که به تحلیل و بررسی دادهها کمک میکند و اطلاعات مفیدی را برای بهبود فرآیندهای آموزشی فراهم میآورد. این ویژگیها در کنار طراحی کاربرپسند و واکنشگرا، تجربهای بینظیر را برای کاربران فراهم میکند.",
       img: "/school.png",
-      link: "https://lama.dev",
+      link: "https://sohoschool.saeidehtajmehr.me/",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ function Portfolio() {
       title: "پروژه سایت معرفی با ReactJS",
       desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است تا تجربهای سریع و روان برای کاربران فراهم کند. این سایت به گونهای طراحی شده که نمونه کارها و پروژههای شما را به بهترین شکل ممکن نمایش دهد. با استفاده از طراحی مدرن و واکنشگرا، سایت ما به خوبی در دستگاههای مختلف نمایش داده میشود و به کاربران امکان میدهد به راحتی با محتوای شما ارتباط برقرار کنند. هدف ما ایجاد یک پلتفرم حرفهای و جذاب است که تواناییها و دستاوردهای شما را به نمایش بگذارد و به شما کمک کند تا در دنیای دیجیتال برجسته شوید.",
       img: "/portfolio.png",
-      link: "https://lama.dev",
+      link: "https://sohoportfolio.saeidehtajmehr.me/",
     },
     {
       id: 3,
@@ -49,8 +49,8 @@ function Portfolio() {
   ];
 
   const handleClick = (way) => {
-    way === "right"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+    way === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 3)
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
@@ -72,25 +72,25 @@ function Portfolio() {
       >
         {data.map((item, index) => (
           <React.Fragment key={index}>
-            <div className="w-[100vw] h-full flex items-center justify-center">
-              <div className={` w-full h-[100%] rounded-2xl flex items-center justify-center max-[640px]:w-[90%] max-[640px]:h-[180px] max-[640px]:my-1`}>
-                <div className="p-20 h-1/2 flex flex-col gap-8 text-black ">
-                  <div className='gap-4 bg-teal-100'>
-                  <h1 className="font-bold text-2xl">{item.title}</h1>
-                  <div className="">
-                    <Image src={item.img} className="rounded-xl portBoxShadow" alt="" width={400} height={350} />
+            <div className="w-[100vw] h-screen  items-center justify-center">
+              <div className={` w-full  items-center justify-center`}>
+                <div className=" h-screen  text-black">
+                  <div className=' px-20  h-1/3 bg-teal-400/20'>
+                    <h1 className="font-bold p-10 text-2xl">{item.title}</h1>
+                    <div className="">
+                      <Image src={item.img} className="rounded-xl portBoxShadow" alt="" width={400} height={350} />
+                    </div>
                   </div>
-                  </div>
-                  <div>
-                  <p className=" ">{item.desc}</p>
-                  <Link
-                    href={item.link}
-                    className="w-full flex justify-end items-center"
-                  >
-                    <button className="bg-white rounded portBoxShadow hover:shadow-none p-3">
-                      مشاهده دمو
-                    </button>
-                  </Link>
+                  <div className= 'p-20 h-2/3'>
+                    <p className="py-10 text-xl">{item.desc}</p>
+                    <Link
+                      href={item.link}
+                      className="w-full flex justify-end items-center"
+                    >
+                      <button className="rounded-md bg-white border-teal-700 border text-teal-700 portBoxShadow hover:shadow-md p-3">
+                        مشاهده دمو
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -100,19 +100,19 @@ function Portfolio() {
       </div>
       <Image
         onClick={() => handleClick("left")}
-        className="absolute h-[50px] text-black w-11 left-32 rotate-180 cursor-pointer"
+        className="absolute h-[50px]  w-11 left-12 rotate-180 cursor-pointer"
         src="/arrow.png"
         alt=""
-        width={12}
-        height={12}
+        width={32}
+        height={32}
       />
       <Image
         onClick={() => handleClick("right")}
-        className="absolute h-[50px] !text-black w-11 right-32 cursor-pointer"
+        className="absolute h-[50px]  w-11 right-12 cursor-pointer"
         src="/arrow.png"
         alt=""
-        width={12}
-        height={12}
+        width={32}
+        height={32}
       />
     </div>
     </motion.div>

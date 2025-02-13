@@ -116,10 +116,10 @@ const Navbar = () => {
       <div className="ltr md:hidden lg:flex xl:justify-center">
         <Link
           href="/"
-          className="text-sm bg-gray-700 rounded-md p-1 font-semibold flex items-center justify-center"
+          className="text-sm bg-blue-500 rounded-md p-1 font-semibold flex items-center justify-center"
         >
           <span className="text-white p-1">SaeidehTajmehr</span>
-          <span className="w-10 h-8 rounded bg-white text-gray-700  flex items-center justify-center">
+          <span className="w-10 h-8 rounded bg-white text-blue-400  flex items-center justify-center">
             . me
           </span>
         </Link>

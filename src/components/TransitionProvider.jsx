@@ -20,22 +20,24 @@ const TransitionProvider = ({ children }) => {
         className="w-scree h-screen bg-white"
       >
         <motion.div
-          className="w-screen h-screen fixed bg-black rounded-b-[100px] z-40"
-          animate={{ height: "0vh" }}
-          exit={{ height: "140vh" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-screen h-screen fixed bg-gradient-to-b from-teal-100 to-white rounded-t-[100px] bottom-0 z-30"
+          initial={{ height: "140vh" }}
+          animate={{ height: "0vh", transition:{delay: 0.8} }}
         />
+        
         <motion.div
-          className="fixed m-auto top-0 left-0 bottom-0 right-0 text-white z-50 w-fit h-fit text-8xl"
+          className="fixed m-auto top-0 left-0 bottom-0 right-0 text-teal-900 z-50 w-fit h-fit text-8xl"
           initial={{opacity: 1}}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >{pageName}</motion.div>
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >{pageName}
+        </motion.div>
         <motion.div
-          className="w-screen h-screen fixed bg-black rounded-t-[100px] bottom-0 z-30"
-          initial={{ height: "140vh" }}
-          animate={{ height: "0vh", transition:{delay: 0.8} }}
+          className="w-screen h-screen fixed bg-gradient-to-b from-white to-teal-100 rounded-b-[100px] z-40"
+          animate={{ height: "0vh" }}
+          exit={{ height: "140vh" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         />
         <div className="h-24">
           <Navbar />

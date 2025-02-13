@@ -32,8 +32,8 @@ const Homepage = () => {
           بگیرید!
         </p>
         <div className="flex gap-4 ">
-          <button className="p-4 rounded-lg ring-1 ring-black  bg-black text-white">نمونه کار‌ها</button>
-          <button className="p-4 rounded-lg ring-1 ring-black  "><Link href={'#portfolio'}>تماس با من</Link></button>
+          <button className="p-4 rounded-lg ring-1 ring-blue-800 bg-blue-500 text-white">نمونه کار‌ها</button>
+          <button className="p-4 rounded-lg ring-blue-500 ring-1 text-blue-800 "><Link href={'#portfolio'}>تماس با من</Link></button>
         </div>
       </div>
       
