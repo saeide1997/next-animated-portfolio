@@ -36,7 +36,7 @@ function Portfolio() {
       title: "پنل کاربری سایت فروشگاهی",
       desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است و دارای امکاناتی جامع برای مدیریت محصولات، سفارشات و تحلیل دادهها میباشد. این سایت با طراحی واکنشگرا، تجربهای بینظیر را در تمامی دستگاهها از جمله موبایل، تبلت و دسکتاپ فراهم میکند. پنل مدیریت سایت به مدیران امکان میدهد تا به راحتی محصولات را اضافه، ویرایش و حذف کنند، سفارشات را پیگیری کنند و با استفاده از ابزارهای تحلیل داده، عملکرد فروشگاه را بهبود بخشند. هدف ما ایجاد یک پلتفرم مدیریت آنلاین کاربرپسند و کارآمد است که نیازهای مدیران را به بهترین شکل ممکن برآورده کند.",
       img: "/reactPanel.png",
-      link: "https://lama.dev",
+      link: "https://sohoedashboard.saeidehtajmehr.me/",
     },
     {
       id: 4,
@@ -72,22 +72,22 @@ function Portfolio() {
       >
         {data.map((item, index) => (
           <React.Fragment key={index}>
-            <div className="w-[100vw] h-screen  items-center justify-center">
-              <div className={` w-full  items-center justify-center`}>
-                <div className=" h-screen  text-black">
-                  <div className=' px-20  h-1/3 bg-teal-400/20'>
-                    <h1 className="font-bold p-10 text-2xl">{item.title}</h1>
+            <div className="w-[100vw] h-screen  items-center">
+              <div className= 'w-full  items-center'>
+                <div className=" h-screen flex  text-[#634a49] ">
+                  <div className=' w-2/5 p-20  bg-[#b29e9a]'>
+                    <h1 className="font-bold pb-5 text-2xl">{item.title}</h1>
                     <div className="">
                       <Image src={item.img} className="rounded-xl portBoxShadow" alt="" width={400} height={350} />
                     </div>
                   </div>
-                  <div className= 'p-20 h-2/3'>
-                    <p className="py-10 text-xl">{item.desc}</p>
+                  <div className= 'p-20  flex flex-col justify-between w-3/5 '>
+                    <p className="py-10 text-xl 2xl:text-2xl">{item.desc}</p>
                     <Link
                       href={item.link}
                       className="w-full flex justify-end items-center"
                     >
-                      <button className="rounded-md bg-white border-teal-700 border text-teal-700 portBoxShadow hover:shadow-md p-3">
+                      <button className="rounded-md bg-white border-[#b29e9a] border mb-10 text-[#b29e9a] portBoxShadow hover:shadow-md p-3">
                         مشاهده دمو
                       </button>
                     </Link>
@@ -100,19 +100,19 @@ function Portfolio() {
       </div>
       <Image
         onClick={() => handleClick("left")}
-        className="absolute h-[50px]  w-11 left-12 rotate-180 cursor-pointer"
+        className="absolute h-[50px]  left-6 rotate-180 cursor-pointer"
         src="/arrow.png"
         alt=""
-        width={32}
-        height={32}
+        width={50}
+        height={70}
       />
       <Image
         onClick={() => handleClick("right")}
-        className="absolute h-[50px]  w-11 right-12 cursor-pointer"
+        className="absolute h-[50px]   right-6 cursor-pointer"
         src="/arrow.png"
         alt=""
-        width={32}
-        height={32}
+        width={50}
+        height={70}
       />
     </div>
     </motion.div>

@@ -16,7 +16,7 @@ const Contact = () => {
       <div className="h-full flex flex-col justify-center items-center lg:flex-row ">
         {/* text Content */}
 
-        <div className="flex  justify-center w-full bg-gradient-to-b from-teal-400/20 to-blue-500 items-center h-1/2 lg:h-full lg:w-1/2 text-2xl lg:text-4xl">
+        <div className="flex text-[#603b3a] justify-center w-full bg-gradient-to-b from-[#b29e9a] to-[#ba8e87] items-center h-1/2 lg:h-full lg:w-1/2 text-2xl lg:text-4xl">
           <motion.div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -34,9 +34,9 @@ const Contact = () => {
 
         {/* form container */}
         <form className=" p-2 h-1/2 lg:h-[90%] w-full lg:w-1/2 flex flex-col justify-center items-center">
-            <textarea className=" my-1 p-4  bg-gray-100 lg:mt-9 border-b-2 border-solid border-gray-700 w-[90%]" placeholder="متن شما..." name="" id=""rows="6" ></textarea>
-            <input  className=" my-1 p-4 bg-gray-100 lg:mb-9 border-b-2 border-solid border-gray-700 w-[90%]" type="text" placeholder=" ایمیل شما ..."  name="" id="" />
-            <button className="portBoxShadow hover:shadow-md bg-blue-300 text-black px-4 py-2 mt-6 lg:mt-18 w-64" type="submit">ارسال نامه</button>
+            <textarea className=" my-1 p-4 rounded-md bg-[#ba8e875c] lg:mt-9 border-b-2 border-solid border-[#b29e9a] w-[90%]" placeholder="متن شما..." name="" id=""rows="6" ></textarea>
+            <input  className=" my-1 p-4 rounded-md bg-[#ba8e875c] lg:mb-9 border-b-2 border-solid border-[#b29e9a] w-[90%]" type="text" placeholder=" ایمیل شما ..."  name="" id="" />
+            <button className="portBoxShadow hover:shadow-md bg-[#ba8e87] rounded-md text-black px-4 py-2 mt-6 lg:mt-18 w-64" type="submit">ارسال نامه</button>
         </form>
       </div>
     </motion.div>
