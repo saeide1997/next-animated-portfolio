@@ -5,7 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import NavLink from "./NavLink";
-// import TelegramIcon from '@mui/icons-material/Telegram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const links = [
   { url: "/", title: "خانه" },
@@ -127,16 +130,16 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex gap-4 justify-center items-center">
         <Link href="https://github.com/saeide1997">
-          <Image src="/github.png" alt="" width={24} height={24} />
+          <GitHubIcon className='!text-[#634a49] hover:!text-[#f2a192] '/>
         </Link>
         <Link href="https://www.linkedin.com/in/saeidehtajmehr/">
-          <Image src="/linkedin.png" alt="" width={24} height={24} />
+          <LinkedInIcon  className='!text-[#634a49] hover:!text-[#f2a192] '/>
         </Link>
         <Link href="https://github.com/saeide1997">
-          <Image src="/gmail.png" alt="" width={24} height={24} />
+          <EmailIcon className='!text-[#634a49] hover:!text-[#f2a192] '/>
         </Link>
         <Link href="https://github.com/saeide1997">
-          {/* <TelegramIcon /> */}
+          <TelegramIcon className='!text-[#634a49] hover:!text-[#f2a192]  ' />
         </Link>
       </div>
     </div>
