@@ -71,7 +71,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="h-full bg-[#b29e9a] sticky overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+    <div className="h-full bg-[#b29e9a] shadow sticky overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       <div className="hidden md:flex gap-4">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
@@ -130,16 +130,16 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex gap-4 justify-center items-center">
         <Link href="https://github.com/saeide1997">
-          <GitHubIcon className='!text-[#634a49] hover:!text-[#f2a192] '/>
+          <GitHubIcon className='!text-[#634a49] hover:!text-[#c57530] '/>
         </Link>
         <Link href="https://www.linkedin.com/in/saeidehtajmehr/">
-          <LinkedInIcon  className='!text-[#634a49] hover:!text-[#f2a192] '/>
+          <LinkedInIcon  className='!text-[#634a49] hover:!text-[#c57530] '/>
         </Link>
-        <Link href="https://github.com/saeide1997">
-          <EmailIcon className='!text-[#634a49] hover:!text-[#f2a192] '/>
+        <Link href="https://saeiide.tm@gmail.com">
+          <EmailIcon className='!text-[#634a49] hover:!text-[#c57530] '/>
         </Link>
-        <Link href="https://github.com/saeide1997">
-          <TelegramIcon className='!text-[#634a49] hover:!text-[#f2a192]  ' />
+        <Link href="https://t.me/Saeideh_Tajmehr">
+          <TelegramIcon className='!text-[#634a49] hover:!text-[#c57530]  ' />
         </Link>
       </div>
     </div>

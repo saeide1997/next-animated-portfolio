@@ -42,3 +42,6 @@ body{
 .insideShadowV{
   box-shadow: rgb(160, 82, 255) 0px 30px 60px -12px inset, rgba(231, 52, 255, 0.3) 0px 18px 36px -18px inset;
 }
+.shadow{
+  box-shadow: rgba(73, 32, 15, 0.58) 0px 10px 20px, rgba(0, 0, 0, 0.21) 0px 2px 30px
+}

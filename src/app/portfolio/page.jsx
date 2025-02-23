@@ -20,7 +20,7 @@ function Portfolio() {
       title: "سایت فروشگاهی",
       desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است تا تجربهای سریع و کارآمد برای کاربران فراهم کند. این سایت با طراحی واکنشگرا، به خوبی در دستگاههای مختلف از جمله موبایل، تبلت و دسکتاپ نمایش داده میشود. هدف ما ایجاد یک پلتفرم خرید آنلاین است که به کاربران امکان میدهد به راحتی محصولات مورد نظر خود را جستجو، مشاهده و خریداری کنند. با استفاده از تکنولوژیهای پیشرفته و رابط کاربری کاربرپسند، سایت ما تجربه خریدی لذتبخش و بدون مشکل را برای مشتریان فراهم میکند.",
       img: "/reactSite.png",
-      link: "https://sohoshop.netlify.app/",
+      link: "https://sohoshop.netlify.app",
     },
     {
       id: 1,
@@ -75,14 +75,14 @@ function Portfolio() {
           <React.Fragment key={index}>
             <div className="w-[100vw] h-screen  items-center">
               <div className= 'w-full  items-center'>
-                <div className=" h-screen flex  text-[#634a49] ">
-                  <div className=' w-2/5 p-20  bg-[#b29e9a]'>
+                <div className=" h-screen flex sm:flex-col xl:flex-row  text-[#634a49] ">
+                  <div className=' xl:w-2/5 sm:w-screen p-20 shadow  bg-[#b29e9a]'>
                     <h1 className="font-bold pb-5 text-2xl">{item.title}</h1>
                     <div className="">
                       <Image src={item.img} className="rounded-xl portBoxShadow" alt="" width={400} height={350} />
                     </div>
                   </div>
-                  <div className= 'p-20  flex flex-col justify-between w-3/5 '>
+                  <div className= 'p-20 sm:w-screen flex flex-col justify-between xl:w-3/5 '>
                     <p className="py-10 text-xl 2xl:text-2xl">{item.desc}</p>
                     <Link
                       href={item.link}
