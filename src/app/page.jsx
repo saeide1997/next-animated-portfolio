@@ -7,7 +7,7 @@ import Link from "next/link";
 const Homepage = () => {
   return (
     <motion.div className="h-full " initial={{y: '-200vh'}} animate={{y: '0%'}} transition={{duration:1.5}}>
-    <div className="h-full flex flex-col lg:flex-row bg-gradient-to-b from-[#b29e9a] to-[#ddc1bc]">
+    <div className="h-full flex flex-col lg:flex-row bg-gradient-to-b from-[#b29e9a] to-[#ffedea]">
       {/* IMAGE CONTAINER */}
       <div className="h-1/2 relative rounded-full flex  lg:h-full lg:w-1/2 px-4 sm:px-8 md:px-12 lg:px-10 xl:px-24">
         <Image src="/prof.png" alt="" fill className="object-contain" />
@@ -32,8 +32,9 @@ const Homepage = () => {
           بگیرید!
         </p>
         <div className="flex gap-4 ">
-          <button className="p-4 rounded-lg ring-1 ring-[#634a49] bg-[#ba8e87] text-white hover:ring-[#ba8e87]  hover:text-[#634a49] hover:bg-none ">نمونه کار‌ها</button>
-          <button className="p-4 rounded-lg ring-[#ba8e87] ring-1 text-[#634a49] hover:ring-[#634a49] hover:bg-[#ba8e87] hover:text-white "><Link href={'#portfolio'}>تماس با من</Link></button>
+          
+          <Link href={'/portfolio'}><button className="p-4 rounded-lg ring-1 ring-[#634a49] bg-[#ba8e87] text-white hover:ring-[#ba8e87]  hover:text-[#634a49] hover:!bg-inherit ">نمونه کار‌ها</button></Link>
+          <Link href={'/contact'}><button className="p-4 rounded-lg ring-[#ba8e87] ring-1 text-[#634a49] hover:ring-[#634a49] hover:bg-[#ba8e87] hover:text-white ">تماس با من</button></Link>
         </div>
       </div>
       
