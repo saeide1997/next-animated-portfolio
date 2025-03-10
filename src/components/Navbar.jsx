@@ -5,10 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import NavLink from "./NavLink";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const links = [
   { url: "/", title: "خانه" },
@@ -25,10 +25,10 @@ const Navbar = () => {
     },
     opened: {
       rotate: 45,
-      backgroundColor: "white",
+      backgroundColor: "rgb(255,255,255)",
     },
   };
-  const centerVarients = {
+  const centerVariants = {
     closed: {
       opacity: 1,
     },
@@ -36,42 +36,42 @@ const Navbar = () => {
       opacity: 0,
     },
   };
-  const bottomVarients = {
+  const bottomVariants = {
     closed: {
       rotate: 0,
     },
     opened: {
       rotate: -45,
-      backgroundColor: "white",
+      backgroundColor: "rgb(255,255,255)",
     },
   };
 
-  const listvariants = {
+  const listVariants = {
     closed: {
       x: "100vw",
     },
     opened: {
       x: 0,
-      transition:{
-        when: 'beforeChildren',
-        staggerChildren: 0.2
-      }
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
   };
 
-  const listItemvariants = {
-    closed:{
+  const listItemVariants = {
+    closed: {
       x: -10,
-      opacity: 0
+      opacity: 0,
     },
-    opened:{
+    opened: {
       x: 0,
-      opacity: 1
-    }
-  }
+      opacity: 1,
+    },
+  };
 
   return (
-    <div className="h-full bg-[#b29e9a] shadow sticky overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+    <div className="h-full bg-[#b29e9a] shadow  overflow-hidden top-0  flex justify-between items-center px-4  sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
       <div className="hidden md:flex gap-4">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
@@ -86,31 +86,29 @@ const Navbar = () => {
           <motion.div
             variants={topVarients}
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-black rounded-full origin-left"
+            className="w-10 h-1 bg-white rounded-full origin-left"
           ></motion.div>
           <motion.div
-            variants={centerVarients}
+            variants={centerVariants}
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-black rounded-full"
+            className="w-10 h-1 bg-white rounded-full"
           ></motion.div>
           <motion.div
-            variants={bottomVarients}
+            variants={bottomVariants}
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-black rounded-full origin-left"
+            className="w-10 h-1 bg-white rounded-full origin-left"
           ></motion.div>
         </button>
         {open && (
           <motion.div
-            variants={listvariants}
-            initial= 'closed'
-            animate = 'opened'
-            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex items-center flex-col  justify-center gap-8 text-4xl z-40"
+            variants={listVariants}
+            initial="closed"
+            animate="opened"
+            className="absolute top-0 left-0 w-screen h-screen bg-[#b29e9a]  text-white flex items-center flex-col  justify-center gap-8 text-4xl z-40"
           >
             {links.map((link) => (
-              <motion.div key={link.title} variants={listItemvariants}>
-              <Link href={link.url}>
-                {link.title}
-              </Link>
+              <motion.div key={link.title} variants={listItemVariants}>
+                <Link href={link.url}>{link.title}</Link>
               </motion.div>
             ))}
           </motion.div>
@@ -130,16 +128,16 @@ const Navbar = () => {
       </div>
       <div className="hidden md:flex gap-4 justify-center items-center">
         <Link href="https://github.com/saeide1997">
-          <GitHubIcon className='!text-[#634a49] hover:!text-[#c57530] '/>
+          <GitHubIcon className="!text-[#634a49] hover:!text-[#c57530] " />
         </Link>
         <Link href="https://www.linkedin.com/in/saeidehtajmehr/">
-          <LinkedInIcon  className='!text-[#634a49] hover:!text-[#c57530] '/>
+          <LinkedInIcon className="!text-[#634a49] hover:!text-[#c57530] " />
         </Link>
         <Link href="https://saeiide.tm@gmail.com">
-          <EmailIcon className='!text-[#634a49] hover:!text-[#c57530] '/>
+          <EmailIcon className="!text-[#634a49] hover:!text-[#c57530] " />
         </Link>
         <Link href="https://t.me/Saeideh_Tajmehr">
-          <TelegramIcon className='!text-[#634a49] hover:!text-[#c57530]  ' />
+          <TelegramIcon className="!text-[#634a49] hover:!text-[#c57530]  " />
         </Link>
       </div>
     </div>
