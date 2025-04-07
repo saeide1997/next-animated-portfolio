@@ -3,17 +3,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Portfolio() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize(); // initial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const data = [
     {
       id: 4,
       color: "from-purple-200 to-blue-100",
       title: "سایت فروشگاهی",
-      desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است...",
+      desc: "پروژه سایت فروشگاهی ما با استفاده از فریمورک React توسعه یافته است تا تجربهای سریع و کارآمد برای کاربران فراهم کند. این سایت با طراحی واکنشگرا، به خوبی در دستگاههای مختلف از جمله موبایل، تبلت و دسکتاپ نمایش داده میشود. هدف ما ایجاد یک پلتفرم خرید آنلاین است که به کاربران امکان میدهد به راحتی محصولات مورد نظر خود را جستجو، مشاهده و خریداری کنند. با استفاده از تکنولوژیهای پیشرفته و رابط کاربری کاربرپسند، سایت ما تجربه خریدی لذتبخش و بدون مشکل را برای مشتریان فراهم میکند.",
       att: "برای دیدن سایت با داده های واقعی متصل به دیتابیس لطفافیلترشکن خود را روشن کنید.",
       img: "/reactSite.png",
       link: "https://sohoshop.saeidehtajmehr.me/",
@@ -22,7 +32,7 @@ function Portfolio() {
       id: 1,
       color: "from-blue-100 to-blue-200",
       title: " پروژه مدریت سیستم آموزشی باNextJs",
-      desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد طراحی شده است...",
+      desc: "پروژه سایت پنل آموزشی ما با هدف ارائه یک پلتفرم جامع و کارآمد برای مدیریت و آموزش طراحی شده است. این سایت دارای داشبوردهای مجزا برای مدیران و معلمان است که به هر گروه امکان میدهد به طور مستقل و موثر وظایف خود را مدیریت کنند. با استفاده از تقویم داخلی، کاربران میتوانند رویدادها و جلسات را به راحتی ثبت و پیگیری کنند. همچنین، نمودارهای پیشرفت در سایت تعبیه شده است که به تحلیل و بررسی داده‌ها کمک میکند.",
       att: "",
       img: "/school.png",
       link: "https://sohoschool.saeidehtajmehr.me/admin",
@@ -31,7 +41,7 @@ function Portfolio() {
       id: 2,
       color: "from-blue-200 to-violet-200",
       title: "پروژه سایت معرفی با ReactJS",
-      desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است...",
+      desc: "پروژه سایت پورتفولیو ما با استفاده از فریمورک React طراحی و توسعه یافته است تا تجربهای سریع و روان برای کاربران فراهم کند. این سایت به گونهای طراحی شده که نمونه کارها و پروژههای شما را به بهترین شکل ممکن نمایش دهد. با استفاده از طراحی مدرن و واکنشگرا، سایت ما به خوبی در دستگاههای مختلف نمایش داده میشود.",
       att: "",
       img: "/portfolio.png",
       link: "https://sohoportfolio.saeidehtajmehr.me/",
@@ -40,7 +50,7 @@ function Portfolio() {
       id: 3,
       color: "from-violet-200 to-purple-200",
       title: "پنل کاربری سایت فروشگاهی",
-      desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است...",
+      desc: "پروژه سایت پنل مدیریت ما با استفاده از فریمورک React توسعه یافته است و دارای امکاناتی جامع برای مدیریت محصولات، سفارشات و تحلیل داده‌ها می‌باشد. این سایت با طراحی واکنشگرا، تجربه‌ای بینظیر را در تمامی دستگاه‌ها از جمله موبایل، تبلت و دسکتاپ فراهم می‌کند.",
       att: "برای دیدن سایت با داده های واقعی متصل به دیتابیس لطفافیلترشکن خود را روشن کنید.",
       img: "/reactPanel.png",
       link: "https://sohoedashboard.saeidehtajmehr.me/",
@@ -96,7 +106,7 @@ function Portfolio() {
               </div>
 
               {/* توضیحات و دکمه */}
-              <div className="lg:w-3/5 w-full p-6 sm:p-10 flex flex-col justify-between">
+              <div className="lg:w-3/5 w-full p-6 sm:p-10 flex flex-col justify-center">
                 <div className="space-y-4">
                   <p className="text-base sm:text-lg leading-relaxed">{item.desc}</p>
                   {item.att && (
